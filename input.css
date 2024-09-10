@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.filter-blue {
+    filter: hue-rotate(180deg) saturate(200%);
+  }
