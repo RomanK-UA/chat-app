@@ -5,7 +5,7 @@ import Chat from './components/Chat'
 import ChatLists from './components/ChatsList'
 import Menu from './components/Menu'
 import { useState } from 'react'
-
+import { IoMdMenu } from "react-icons/io";
 function App() {
   
   const [isOpen, setIsOpen] = useState(false);
@@ -14,9 +14,10 @@ function App() {
   }
   
   return (
-    <div className="bg-[url('../src/assets/bg.jpg')] bg-cover bg-center h-screen py-5">
-      <div className="container mx-auto h-full flex items-center justify-center flex-1 p-2 border-2 rounded-xl backdrop-blur-md backdrop-saturate-150 ">
-        <Menu isOpen = {isOpen} toggleMenu = {toggleMenu} />
+    <div className="bg-[url('../src/assets/bg.jpg')] bg-cover bg-center h-screen ">
+      <div className="relative mx-auto h-full flex items-center justify-center flex-1 p-2 border-2 rounded-xl backdrop-blur-md backdrop-saturate-150 ">
+        <button isOpen={isOpen} onClick={toggleMenu} className='text-3xl self-start z-20'><IoMdMenu /></button>
+        <Menu isOpen = {isOpen}/>
         <ChatLists />
         <Chat />
         <ChatDetails/>
